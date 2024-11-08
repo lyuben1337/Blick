@@ -1,17 +1,18 @@
 import { Tabs } from "expo-router";
-import { InfoIcon, PhotosIcon, SettingsIcon } from "@/components/Icons";
-import { Colors } from "@/constants/Colors";
-import { useColorScheme } from "react-native";
+import { InfoIcon, PhotosIcon, SettingsIcon } from "@/components/shared/Icons";
+import { useThemeColor } from "@/hooks/useThemeColor";
 
 export default function TabsLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+        tabBarActiveTintColor: useThemeColor("tabIconSelected"),
+        tabBarStyle: { backgroundColor: useThemeColor("background") },
+        headerStyle: { backgroundColor: useThemeColor("background") },
+        headerTitle: "Blick",
+        headerShadowVisible: false,
+        headerTitleStyle: { color: useThemeColor("text") },
         tabBarShowLabel: false,
-        headerShown: false,
       }}
     >
       <Tabs.Screen

@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { ThemedView } from "@/components/ThemedView";
-import { ThemedText } from "@/components/ThemedText";
+import { ThemedView } from "@/components/shared/ThemedView";
+import { ThemedText } from "@/components/shared/ThemedText";
 
 export default function AboutScreen() {
   return (
