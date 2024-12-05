@@ -1,50 +1,72 @@
-# Welcome to your Expo app 👋
+# Blick
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This app allows users to import images, adjust their brightness and contrast, and export the edited images. The app is built with **React Native** and **Expo**, utilizing image processing with `gl-react`.
 
-## Get started
+---
 
-1. Install dependencies
+## Features
 
+- **Import Images:** Select images from your library using the image picker.
+- **Edit Images:** Adjust image brightness and contrast in real-time using sliders.
+- **Preview Changes:** Live preview of the edited image using GLSL shaders.
+- **Export Images:** Save and share edited images.
+- **Localized UI:** Supports multiple languages using `react-i18next`.
+
+---
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd <repository-name>
+   ```
+
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. Start the development server:
    ```bash
-    npx expo start
+   expo start
    ```
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Usage
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1. **Import an Image:**
+   - Press the "Import Photo" button.
+   - Select an image from your gallery.
 
-## Get a fresh project
+2. **Edit the Image:**
+   - Use the sliders to adjust **Brightness** and **Contrast**.
 
-When you're ready, run:
+3. **Save or Share:**
+   - Press the export icon to save or share your edited image.
 
-```bash
-npm run reset-project
-```
+4. **Exit Editing:**
+   - Press the exit icon to return to the home screen.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## File Structure
 
-To learn more about developing your project with Expo, look at the following resources:
+- `ImageViewer`: Displays the selected image and provides navigation to the editor.
+- `Saturate`: A GLSL shader for applying brightness and contrast adjustments.
+- `ImageParameterSlider`: Slider components for controlling image properties.
+- `ThemedView` and `ThemedText`: Shared components for consistent theming.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## Screenshots
 
-Join our community of developers creating universal apps.
+<div align="center"> <img src="https://github.com/user-attachments/assets/e86a1e24-4820-4873-b12a-14b47f4b3259" alt="Home Screen" width="30%"> <img src="https://github.com/user-attachments/assets/43a9d6e9-dedd-4a99-b098-ec069ee4d736" alt="Edit Screen" width="30%"> <img src="https://github.com/user-attachments/assets/895894c4-22c2-4421-a6c1-a195410a7839" alt="Export Screen" width="30%"> </div>
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Dependencies
+
+- **Expo Modules:** `expo-image`, `expo-image-picker`, `expo-sharing`, `expo-file-system`
+- **React Native Libraries:** `react-native-view-shot`, `react-native-gesture-handler`
+- **GL React:** `gl-react`, `gl-react-expo`
+- **Localization:** `react-i18next`
